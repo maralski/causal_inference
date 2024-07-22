@@ -39,7 +39,7 @@ def set_seed(default_seed=123):
     
 def visualize_dag(G, issue_nodes=None):
     pos = nx.multipartite_layout(G, subset_key="layer")
-    plt.figure(figsize=(14, 10))
+    plt.figure(figsize=(14, 4))
     
     node_colors = ['lightblue' if node not in (issue_nodes or []) else 'red' for node in G.nodes()]
     
@@ -97,6 +97,7 @@ def analyze_root_cause(G, issue_nodes):
 def main():
     set_seed()
     
+    st.set_page_config(layout="wide")
     st.title("Service Map DAG Root Cause Analyzer")
     st.link_button("Github repo", "https://github.com/maralski/causal_inference")
     st.write("This tool generates random service maps, analyzes performance issues, and identifies potential root causes.")
