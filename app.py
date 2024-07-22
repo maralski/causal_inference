@@ -97,7 +97,8 @@ def analyze_root_cause(G, issue_nodes):
 def main():
     set_seed()
     
-    st.title("Service Map DAG Analyzer")
+    st.title("Service Map DAG Root Cause Analyzer")
+    st.link_button("Github repo", "https://github.com/maralski/causal_inference")
     st.write("This tool generates random service maps, analyzes performance issues, and identifies potential root causes.")
 
     num_nodes = st.slider("Number of nodes", min_value=2, max_value=26, value=15)
