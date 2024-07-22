@@ -65,6 +65,9 @@ def analyze_root_cause(G, issue_nodes):
             except nx.NetworkXNoPath:
                 continue
     
+    # Sort shortest to longest string
+    all_paths = sorted(all_paths, key=len)
+    
     # If only one path the edge is the root cause
     if len(all_paths) == 1:
         potential_root_causes.append(all_paths[0])
@@ -81,6 +84,7 @@ def analyze_root_cause(G, issue_nodes):
                 else:
                     not_in_count = not_in_count + 1 
             if not_in_count == all_path_count:
+                print(spath)
                 potential_root_causes.append(spath)
         
     # Count occurrences of each edge node in potential root cause paths
