@@ -4,16 +4,7 @@ import matplotlib.pyplot as plt
 import random
 import string
 from collections import defaultdict
-from itertools import combinations, groupby
 
-# def generate_random_dag(num_nodes, max_children):
-#     nodes = list(string.ascii_uppercase[:num_nodes])
-#     dag = {node: [] for node in nodes}
-#     for i, node in enumerate(nodes[:-1]):
-#         num_children = random.randint(0, min(max_children, num_nodes - i - 1))
-#         children = random.sample(nodes[i+1:], num_children)
-#         dag[node] = children
-#     return dag
 
 def generate_dag(node_count, max_depth):
     
